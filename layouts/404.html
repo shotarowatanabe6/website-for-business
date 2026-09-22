@@ -1,0 +1,10 @@
+{{ define "main" }}
+<header class="hero">
+  <h1>ページが見つかりません</h1>
+  <p class="tagline">お探しのページは存在しないか、移動した可能性があります。</p>
+</header>
+
+<main id="main" class="notfound">
+  <p><a href="{{ "/" | relURL }}">{{ site.Title }} のトップへ</a></p>
+</main>
+{{ end }}

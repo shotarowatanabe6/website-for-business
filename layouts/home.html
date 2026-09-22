@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{- $sections := (site.GetPage "/sections").Pages.ByWeight -}}
+<header class="hero">
+  <h1>{{ site.Title }}</h1>
+  {{- with site.Params.tagline }}
+  <p class="tagline">{{ . }}</p>
+  {{- end }}
+  <nav class="toc" aria-label="セクション一覧">
+    <ul>
+      {{- range $sections }}
+      <li><a href="#{{ .Params.anchor }}">{{ .Title }}</a></li>
+      {{- end }}
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  {{- range $sections }}
+  <section id="{{ .Params.anchor }}" aria-labelledby="heading-{{ .Params.anchor }}">
+    <h2 id="heading-{{ .Params.anchor }}">{{ .Title }}</h2>
+    {{ .Content }}
+  </section>
+  {{- end }}
+</main>
+{{ end }}

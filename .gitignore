@@ -1,0 +1,7 @@
+# Hugo のビルド成果物とキャッシュ
+/public/
+/resources/
+.hugo_build.lock
+
+# macOS
+.DS_Store

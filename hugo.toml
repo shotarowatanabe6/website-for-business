@@ -1,0 +1,34 @@
+# Hugo の設定。サイト全体に関わる値だけをここに置く。
+# 本文は content/sections/*.md 側にある。
+
+# 末尾のスラッシュを省略しない（canonical と og:image の絶対URLがここから作られる）。
+baseURL = 'https://shotarowatanabe6.pages.dev/'
+
+# サイト上で名乗る表記
+# ここがページのタイトル、OGPのサイト名、フッターの著作権表記に使われる。
+title = 'WATANABE Shotaro'
+
+languageCode = 'ja-jp'
+defaultContentLanguage = 'ja'
+enableRobotsTXT = true
+
+# 1ページ構成なので、タグやカテゴリ、RSSは生成しない。
+disableKinds = ['rss', 'taxonomy', 'term']
+
+[params]
+  description = 'Go Software Engineer'
+
+  # 名前の下に置く一行。
+  tagline = 'Go Software Engineer'
+
+  # static/ からの相対パス。OGP画像（1200x630）。
+  ogImage = 'og.png'
+
+[markup.goldmark.renderer]
+  # 本文中の生HTMLは無効のまま。Markdownだけで書けるようにしておく。
+  unsafe = false
+
+[markup.goldmark.extensions]
+  # 行頭の [x] や [X] がチェックボックスに化けるのを防ぐ。
+  # （リンクのセクションで [X](https://x.com/) と書けるようにするため）
+  taskList = false
